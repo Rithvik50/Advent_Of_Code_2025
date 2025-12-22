@@ -1,5 +1,5 @@
-with open("input.txt", 'r') as f:
-    lines = f.readlines()
+with open("input.txt", 'r') as file:
+    lines = file.readlines()
     rotations = [line.strip() for line in lines]
 
 dial = 50
