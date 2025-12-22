@@ -1,4 +1,4 @@
-with open("sample.txt", 'r') as f:
+with open("input.txt", 'r') as f:
     lines = f.readlines()
     rotations = [line.strip() for line in lines]
 
