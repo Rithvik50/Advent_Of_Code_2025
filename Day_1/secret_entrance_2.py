@@ -11,4 +11,5 @@ for rotation in rotations:
         dial = (dial + step) % 100
         if dial == 0:
             password += 1
+            
 print(password)

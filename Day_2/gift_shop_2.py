@@ -14,4 +14,5 @@ for rng in ranges:
                 if pattern * repeats == id and repeats >= 2:
                     total += i
                     break
+                
 print(total)

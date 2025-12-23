@@ -9,4 +9,5 @@ for rotation in rotations:
     dial = dial + val if dir == "R" else dial - val
     if dial % 100 == 0:
         password += 1
+        
 print(password)

@@ -8,4 +8,5 @@ for rng in ranges:
         id = str(i)
         if id[:len(id)//2] == id[len(id)//2:]:
             total += i
+            
 print(total)
