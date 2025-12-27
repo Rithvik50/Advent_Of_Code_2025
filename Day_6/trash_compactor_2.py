@@ -4,6 +4,7 @@ matrix = []
 for line in input_data[:-1]:
     matrix.append([val for val in line])
 ops = list(input_data[-1].replace(' ', ''))[::-1]
+input_data.close()
 
 total = 0
 equations = [[] for _ in range(len(ops))]
