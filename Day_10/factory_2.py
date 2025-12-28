@@ -1,3 +1,4 @@
+import aocd
 from functools import cache
 from itertools import combinations, product
 
@@ -26,9 +27,9 @@ def solve_single(coeffs: list[tuple[int, ...]], goal: tuple[int, ...]) -> int:
 		return answer
 	return solve_single_aux(goal)
 
-def solve(raw: str):
+def solve(data):
 	score = 0
-	lines = raw.splitlines()
+	lines = data.splitlines()
 	for I, L in enumerate(lines, 1):
 		_, *coeffs, goal = L.split()
 		goal = tuple(int(i) for i in goal[1:-1].split(","))
@@ -37,6 +38,8 @@ def solve(raw: str):
 
 		subscore = solve_single(coeffs, goal)
 		score += subscore
-	print(score)
+	return score
 
-solve(open("input.txt", 'r').read())
+if __name__ == "__main__":
+    # print(solve(open("sample.txt").read()))
+    print(solve(aocd.get_data(year=2025, day=10)))

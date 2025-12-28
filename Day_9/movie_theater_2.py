@@ -1,11 +1,4 @@
-def load_input():
-    with open("input.txt", 'r') as file:
-        data = [line.rstrip() for line in file.readlines()]
-    return data
-
-def parse(data):
-    data = [line.split(',') for line in data]
-    return [(int(a), int(b)) for a,b in data]
+import aocd
 
 corners = []
 
@@ -113,9 +106,10 @@ def find(i) -> tuple:
     y = compY[ corners[i][1] ]
     return x, y
 
-def part2(data):
+def solve(data):
     global corners, compCorners
-    corners = parse(data)
+    lines = data.splitlines()
+    corners = [(int(a), int(b)) for a,b in [line.strip().split(',') for line in lines]]
     
     compress(corners)
     compCorners = [find(i) for i in range(len(corners))]
@@ -137,6 +131,6 @@ def part2(data):
 
     return max_area
 
-if __name__=='__main__':
-    data = load_input()
-    print(part2(data))
+if __name__ == "__main__":
+    # print(solve(open("sample.txt").read()))
+    print(solve(aocd.get_data(year=2025, day=9)))
